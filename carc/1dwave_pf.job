@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --account=tustephe_1345
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --gpus-per-task=a100:1
+#SBATCH --mem=16G
+#SBATCH --time=0:30:00
+
+module purge
+module load usc
+module load python
+module load git
+module load cuda/12.0.0
+module load cudnn/8.4.0.27-11.6
+
+pip install --no-index -r requirements.txt
+
+jupyter nbconvert --execute --to notebook --inplace ~/pinnsformer/demo/1d_wave/1dwave_pinnsformer.ipynb
