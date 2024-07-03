@@ -17,4 +17,4 @@ module load cudnn/8.4.0.27-11.6
 
 pip install --no-index -r requirements.txt
 
-jupyter nbconvert --execute --to notebook --inplace ~/pinnsformer/demo/1d_wave/1dwave_pinnsformer.ipynb
+jupyter nbconvert --execute --to notebook --inplace ~/pinnsformer/demo/1d_wave/1d_wave_pinnsformer.ipynb
